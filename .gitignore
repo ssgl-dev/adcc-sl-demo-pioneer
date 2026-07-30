@@ -1,0 +1,8 @@
+node\_modules/
+.env
+.env.local
+.DS\_Store
+.vscode/
+dist/
+build/
+\*.log

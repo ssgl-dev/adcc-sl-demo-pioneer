@@ -1,0 +1,27 @@
+{
+  "videoUrl": "/video/2076535555384504322/video.mp4",
+  "segments": [
+    { "start": 0,   "end": 12 },
+    { "start": 12,  "end": 18 },
+    { "start": 18,  "end": 24 },
+    { "start": 24,  "end": 30 },
+    { "start": 30,  "end": 36 },
+    { "start": 36,  "end": 42 },
+    { "start": 42,  "end": 50 },
+    { "start": 50,  "end": 58 },
+    { "start": 58,  "end": 66 },
+    { "start": 66,  "end": 74 },
+    { "start": 74,  "end": 82 },
+    { "start": 82,  "end": 90 },
+    { "start": 90,  "end": 99 },
+    { "start": 99,  "end": 107 },
+    { "start": 107, "end": 115 },
+    { "start": 115, "end": 123 },
+    { "start": 123, "end": 133 },
+    { "start": 133, "end": 141 },
+    { "start": 141, "end": 149 },
+    { "start": 149, "end": 157 },
+    { "start": 157, "end": 165 },
+    { "start": 165, "end": 180 }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "description": "ADCC 手语视频配置清单 — 管理所有页面的文本→视频映射",
+  "videoBasePath": "/video/",
+  "pages": [
+    {
+      "id": "adcc_one",
+      "name": "警惕「猜猜我是誰」騙案",
+      "dataFile": "/data/adcc_two.json",
+      "pageMatch": "page_raw.html"
+    }
+  ]
+}
