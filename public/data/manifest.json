@@ -1,6 +1,6 @@
 {
   "description": "ADCC 手语视频配置清单 — 管理所有页面的文本→视频映射",
-  "videoBasePath": "/video/",
+  "videoBasePath": "https://oaelshowqaccdvby.public.blob.vercel-storage.com/video/",
   "pages": [
     {
       "id": "adcc_one",

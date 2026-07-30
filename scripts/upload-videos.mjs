@@ -7,7 +7,7 @@
  *   3. Link project: vercel link
  *   4. Run: node scripts/upload-videos.mjs
  *
- * The script uploads all .mp4 files from adcc-site/video/
+ * The script uploads all .mp4 files from public/video/
  * to Vercel Blob, then prints the blob URL to update manifest.json.
  */
 
@@ -15,7 +15,7 @@ import { put } from "@vercel/blob";
 import { readdirSync, readFileSync, statSync } from "fs";
 import { join, basename } from "path";
 
-const VIDEO_DIR = join(import.meta.dirname, "..", "adcc-site", "video");
+const VIDEO_DIR = join(import.meta.dirname, "..", "public", "video");
 
 async function uploadAll() {
   const allFiles = readdirSync(VIDEO_DIR);

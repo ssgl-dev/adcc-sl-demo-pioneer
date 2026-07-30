@@ -12,3 +12,5 @@ next-env.d.ts
 
 # Videos stored externally on Vercel Blob
 public/video/
+.vercel
+.env*
