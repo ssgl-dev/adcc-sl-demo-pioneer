@@ -1,8 +1,14 @@
-node\_modules/
+node_modules/
+.next/
 .env
 .env.local
-.DS\_Store
+.DS_Store
 .vscode/
 dist/
 build/
-\*.log
+*.log
+*.tsbuildinfo
+next-env.d.ts
+
+# Videos stored externally on Vercel Blob
+public/video/

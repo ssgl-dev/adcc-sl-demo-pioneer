@@ -1,0 +1,1 @@
+_initMainMenu('main-menu')
