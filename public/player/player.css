@@ -9,8 +9,8 @@
   right: 20px;
   bottom: 20px;
   z-index: 99999;
-  width: 340px !important;
-  max-width: 340px !important;
+  width: 390px !important;
+  max-width: 390px !important;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.08);
@@ -119,18 +119,18 @@
   color: #fff;
 }
 
-/* --- 三级尺寸 --- */
+/* --- 三级尺寸（1.4x 等比例缩放）--- */
 .adcc-video-player.size-sm {
   width: 280px !important;
   max-width: 280px !important;
 }
 .adcc-video-player.size-md {
-  width: 340px !important;
-  max-width: 340px !important;
+  width: 390px !important;
+  max-width: 390px !important;
 }
 .adcc-video-player.size-lg {
-  width: 560px !important;
-  max-width: 560px !important;
+  width: 550px !important;
+  max-width: 550px !important;
 }
 
 /* --- 段号标签（已弃用，保留样式以防残留）--- */
@@ -192,11 +192,11 @@
   border: none;
   color: #888;
   cursor: pointer;
-  font-size: 12px;
-  padding: 4px 6px;
+  font-size: 18px;
+  padding: 10px 14px;
   line-height: 1;
-  border-radius: 4px;
-  min-width: 32px;
+  border-radius: 6px;
+  min-width: 48px;
   text-align: center;
   flex-shrink: 0;
   transition: color 0.2s, background 0.2s;
@@ -220,10 +220,11 @@
   border: none;
   color: #888;
   cursor: pointer;
-  font-size: 14px;
-  padding: 4px 6px;
+  font-size: 22px;
+  padding: 10px 14px;
   line-height: 1;
-  border-radius: 4px;
+  border-radius: 6px;
+  min-width: 44px;
   transition: color 0.2s, background 0.2s;
 }
 .adcc-video-controls .btn-expand:hover {
@@ -246,21 +247,27 @@
   background: #f0f0f0;
 }
 
-/* 关闭 */
-.adcc-video-controls .btn-close {
-  background: none;
+/* 关闭 — 播放器右上角，黑色半透明底 */
+.adcc-video-player > .btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 20;
+  background: transparent;
   border: none;
-  color: #999;
+  color: #fff;
   cursor: pointer;
   font-size: 16px;
-  padding: 4px 6px;
-  line-height: 1;
-  border-radius: 4px;
-  transition: color 0.2s, background 0.2s;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 6px;
+  transition: background 0.2s;
 }
-.adcc-video-controls .btn-close:hover {
-  color: #1a1a1a;
-  background: #f0f0f0;
+.adcc-video-player > .btn-close:hover {
+  background: rgba(0, 0, 0, 0.55);
 }
 
 /* --- 段落播放按钮（行内右侧）--- */
@@ -399,10 +406,13 @@ li.adcc-speakable {
     max-width: 200px !important;
     border-radius: 10px;
   }
-  .adcc-video-player.size-md,
+  .adcc-video-player.size-md {
+    width: 280px !important;
+    max-width: 280px !important;
+  }
   .adcc-video-player.size-lg {
-    width: 240px !important;
-    max-width: 240px !important;
+    width: 390px !important;
+    max-width: 390px !important;
   }
   .adcc-video-controls {
     padding: 6px 8px;
@@ -414,8 +424,12 @@ li.adcc-speakable {
     min-width: 28px;
   }
   .adcc-video-controls .btn-speed {
-    font-size: 11px;
-    padding: 2px 4px;
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  .adcc-video-controls .btn-expand {
+    font-size: 20px;
+    padding: 8px 12px;
   }
   .adcc-play-btn {
     width: 20px;

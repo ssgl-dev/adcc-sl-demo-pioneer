@@ -42,7 +42,7 @@
   // ==========================================================
   let playerEl, videoEl, progressFill, timeCurrent, subtitleEl;
   let timeDuration, btnSpeed, btnExpand;
-  let speedIdx = 0; // SPEED_OPTIONS[0] = 1
+  let speedIdx = 1; // SPEED_OPTIONS[1] = 1.25
   let sizeLevel = 1; // 0=sm 240px, 1=md 380px, 2=lg 560px
 
   // ==========================================================
@@ -202,6 +202,7 @@
       <div class="adcc-video-body">
         <video preload="metadata" playsinline></video>
       </div>
+      <button class="btn-close" title="关闭">✕</button>
       <div class="adcc-video-controls">
         <div class="progress-wrap">
           <div class="time-row">
@@ -214,10 +215,9 @@
             </div>
           </div>
         </div>
-        <button class="btn-speed" title="切换播放速度">1x</button>
+        <button class="btn-speed" title="切换播放速度">1.25x</button>
         <div class="actions-row">
           <button class="btn-expand" title="放大">⛶</button>
-          <button class="btn-close" title="关闭">✕</button>
         </div>
       </div>
     `;
@@ -333,6 +333,9 @@
     // 显示播放器
     playerEl.classList.add("active");
     playerEl.classList.remove("minimized");
+
+    // 保持用户之前设定的播放速度（加载新视频后浏览器会重置 playbackRate）
+    videoEl.playbackRate = SPEED_OPTIONS[speedIdx];
 
     videoEl.play().catch((e) => {
       console.warn("video-resolver: 视频播放失败:", e.message);

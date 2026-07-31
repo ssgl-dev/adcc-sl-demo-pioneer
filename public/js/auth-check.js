@@ -14,10 +14,10 @@
   //   修改密码: 在浏览器控制台运行 ADCC_Auth.setPassword('新密码')
   //            或在下方 DEFAULT_HASH 填入新密码的 SHA-256 值
   // ==========================================================
-  const DEFAULT_USERNAME = "admin";
+  const DEFAULT_USERNAME = "ADCCtech2026";
   const DEFAULT_HASH =
-    "94a0335376608e2f2b53833e2f64fd78a4e7cb2cb5ce4a447dd4a8a5b53dcf86";
-  // 默认密码: "adcc2026"
+    "b1be92cec6c10e2b962b7001e08e9ce23f73de568dc0b89299bca26be3b8dd30";
+  // 默认密码: "ImpactAI2026"
 
   const STORAGE_KEY = "adcc_auth_token";
 
