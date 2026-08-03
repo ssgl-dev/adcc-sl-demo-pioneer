@@ -42,7 +42,7 @@
   // ==========================================================
   let playerEl, videoEl, progressFill, timeCurrent, subtitleEl;
   let timeDuration, btnSpeed, btnExpand;
-  let speedIdx = 1; // SPEED_OPTIONS[1] = 1.25
+  let speedIdx = 0; // SPEED_OPTIONS[0] = 1x
   let sizeLevel = 1; // 0=sm 240px, 1=md 380px, 2=lg 560px
 
   // ==========================================================
@@ -215,7 +215,7 @@
             </div>
           </div>
         </div>
-        <button class="btn-speed" title="切换播放速度">1.25x</button>
+        <button class="btn-speed" title="切换播放速度">1x</button>
         <div class="actions-row">
           <button class="btn-expand" title="放大">⛶</button>
         </div>
@@ -335,7 +335,7 @@
     playerEl.classList.remove("minimized");
 
     // 保持用户之前设定的播放速度（加载新视频后浏览器会重置 playbackRate）
-    videoEl.playbackRate = SPEED_OPTIONS[speedIdx];
+    videoEl.playbackRate = SPEED_OPTIONS[speedIdx] + 0.25;
 
     videoEl.play().catch((e) => {
       console.warn("video-resolver: 视频播放失败:", e.message);
@@ -365,7 +365,7 @@
   function onSpeedClick() {
     speedIdx = (speedIdx + 1) % SPEED_OPTIONS.length;
     const speed = SPEED_OPTIONS[speedIdx];
-    videoEl.playbackRate = speed;
+    videoEl.playbackRate = speed + 0.25;
     btnSpeed.textContent = speed + "x";
   }
 

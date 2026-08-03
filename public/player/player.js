@@ -36,7 +36,7 @@
   // ==========================================================
   let playerEl, videoEl, progressFill, timeCurrent;
   let timeDuration, btnSpeed, btnExpand;
-  let speedIdx = 0; // SPEED_OPTIONS[0] + 0.25 实际 1.25x，显示 1x
+  let speedIdx = 0; // SPEED_OPTIONS[0] = 1x
   let sizeLevel = 2; // 0=xs 200px, 1=sm 260px, 2=md 320px, 3=lg 380px, 4=xl 440px
 
   // ==========================================================
@@ -152,7 +152,7 @@
             </div>
           </div>
         </div>
-        <button class="btn-speed" title="切換播放速度">1x</button>
+        <button class="btn-speed" title="切換播放速度"></button>
         <div class="actions-row">
           <button class="btn-expand" title="放大">⛶</button>
         </div>
@@ -175,6 +175,9 @@
     btnExpand    = playerEl.querySelector(".btn-expand");
     const closeBtn    = playerEl.querySelector(".btn-close");
 
+    // 根据 speedIdx 设置初始按钮文本，确保显示正确
+    btnSpeed.textContent = SPEED_OPTIONS[speedIdx] + "x";
+
     // 事件
     btnSpeed.addEventListener("click", onSpeedClick);
     btnExpand.addEventListener("click", cycleSize);
@@ -186,6 +189,9 @@
     // 视频元数据加载
     videoEl.addEventListener("loadedmetadata", () => {
       timeDuration.textContent = formatTime(videoEl.duration);
+      // 强制将速度索引重置为0，确保默认显示为 1.0x
+      speedIdx = 0; 
+    
       applySpeed(); // 初始化播放速度
       // 如果没有手动配置时间戳，自动均分
       if (segments.length === 0 && sentences.length > 0) {
@@ -337,7 +343,7 @@
 
   function applySpeed() {
     const speed = SPEED_OPTIONS[speedIdx];
-    videoEl.playbackRate = speed + 0.25;
+    videoEl.playbackRate = speed;
     btnSpeed.textContent = speed + "x";
   }
 
