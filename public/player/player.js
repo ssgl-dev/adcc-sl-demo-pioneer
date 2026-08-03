@@ -186,6 +186,7 @@
     // 视频元数据加载
     videoEl.addEventListener("loadedmetadata", () => {
       timeDuration.textContent = formatTime(videoEl.duration);
+      applySpeed(); // 初始化播放速度
       // 如果没有手动配置时间戳，自动均分
       if (segments.length === 0 && sentences.length > 0) {
         autoDistributeSegments();
@@ -331,6 +332,10 @@
 
   function onSpeedClick() {
     speedIdx = (speedIdx + 1) % SPEED_OPTIONS.length;
+    applySpeed();
+  }
+
+  function applySpeed() {
     const speed = SPEED_OPTIONS[speedIdx];
     videoEl.playbackRate = speed + 0.25;
     btnSpeed.textContent = speed + "x";
