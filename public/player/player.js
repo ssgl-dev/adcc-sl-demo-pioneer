@@ -36,8 +36,8 @@
   // ==========================================================
   let playerEl, videoEl, progressFill, timeCurrent;
   let timeDuration, btnSpeed, btnExpand;
-  let speedIdx = 1; // SPEED_OPTIONS[1] = 1.25
-  let sizeLevel = 1; // 0=sm 240px, 1=md 380px, 2=lg 560px
+  let speedIdx = 0; // SPEED_OPTIONS[0] + 0.25 实际 1.25x，显示 1x
+  let sizeLevel = 2; // 0=xs 200px, 1=sm 260px, 2=md 320px, 3=lg 380px, 4=xl 440px
 
   // ==========================================================
   // 找出所有可朗读的段落
@@ -139,7 +139,7 @@
       <div class="adcc-video-body">
         <video preload="metadata" playsinline></video>
       </div>
-      <button class="btn-close" title="关闭">✕</button>
+      <button class="btn-close" title="關閉">✕</button>
       <div class="adcc-video-controls">
         <div class="progress-wrap">
           <div class="time-row">
@@ -152,7 +152,7 @@
             </div>
           </div>
         </div>
-        <button class="btn-speed" title="切换播放速度">1.25x</button>
+        <button class="btn-speed" title="切換播放速度">1x</button>
         <div class="actions-row">
           <button class="btn-expand" title="放大">⛶</button>
         </div>
@@ -267,7 +267,7 @@
       const btn = document.createElement("button");
       btn.className = "adcc-play-btn";
       btn.innerHTML = "▶";
-      btn.title = "播放此段视频";
+      btn.title = "播放此段影片";
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
         playSentence(i);
@@ -332,7 +332,7 @@
   function onSpeedClick() {
     speedIdx = (speedIdx + 1) % SPEED_OPTIONS.length;
     const speed = SPEED_OPTIONS[speedIdx];
-    videoEl.playbackRate = speed;
+    videoEl.playbackRate = speed + 0.25;
     btnSpeed.textContent = speed + "x";
   }
 
@@ -395,18 +395,18 @@
   }
 
   // ==========================================================
-  // 三级尺寸切换
+  // 五级尺寸切换
   // ==========================================================
   function cycleSize() {
-    sizeLevel = (sizeLevel + 1) % 3;
+    sizeLevel = (sizeLevel + 1) % 5;
     applySize();
   }
 
   function applySize() {
-    playerEl.classList.remove("size-sm", "size-md", "size-lg");
-    const labels = ["sm", "md", "lg"];
-    const titles = ["放大 (当前: 小)", "放大 (当前: 中)", "缩小 (当前: 大)"];
-    const icons  = ["⛶", "⛶", "⛯"];
+    playerEl.classList.remove("size-xs", "size-sm", "size-md", "size-lg", "size-xl");
+    const labels = ["xs", "sm", "md", "lg", "xl"];
+    const titles = ["放大 (當前: 超小)", "放大 (當前: 小)", "放大 (當前: 中)", "放大 (當前: 大)", "縮小 (當前: 超大)"];
+    const icons  = ["⛶", "⛯", "⛶", "⛯", "⛶"];
 
     playerEl.classList.add("size-" + labels[sizeLevel]);
     btnExpand.title = titles[sizeLevel];
