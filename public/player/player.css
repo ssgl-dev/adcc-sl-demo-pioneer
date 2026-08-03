@@ -141,6 +141,18 @@
   max-width: min(440px, 96vw) !important;
 }
 
+/* --- 尺寸级别时间显示适配 --- */
+.adcc-video-player.size-xs .time-current,
+.adcc-video-player.size-xs .time-duration {
+  font-size: 11px;
+  min-width: 28px;
+}
+.adcc-video-player.size-sm .time-current,
+.adcc-video-player.size-sm .time-duration {
+  font-size: 12px;
+  min-width: 34px;
+}
+
 /* --- 段号标签（已弃用，保留样式以防残留）--- */
 .adcc-video-controls .segment-label {
   font-size: 11px;
@@ -165,11 +177,17 @@
   gap: 2px;
   flex-shrink: 0;
 }
-.adcc-video-controls .time-current,
+.adcc-video-controls .time-current {
+  font-size: 14px;
+  color: #ccc;
+  min-width: 40px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
 .adcc-video-controls .time-duration {
-  font-size: 11px;
+  font-size: 14px;
   color: #888;
-  min-width: 34px;
+  min-width: 40px;
   text-align: center;
   font-variant-numeric: tabular-nums;
 }
@@ -438,10 +456,23 @@ li.adcc-speakable {
     padding: 6px 8px;
     gap: 4px;
   }
-  .adcc-video-controls .time-current,
+  .adcc-video-controls .time-current {
+    font-size: 12px;
+    min-width: 34px;
+  }
   .adcc-video-controls .time-duration {
+    font-size: 12px;
+    min-width: 34px;
+  }
+  .adcc-video-player.size-xs .time-current,
+  .adcc-video-player.size-xs .time-duration {
     font-size: 10px;
-    min-width: 28px;
+    min-width: 24px;
+  }
+  .adcc-video-player.size-sm .time-current,
+  .adcc-video-player.size-sm .time-duration {
+    font-size: 10px;
+    min-width: 26px;
   }
   .adcc-video-controls .btn-speed {
     font-size: 16px;

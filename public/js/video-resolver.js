@@ -42,7 +42,7 @@
   // ==========================================================
   let playerEl, videoEl, progressFill, timeCurrent, subtitleEl;
   let timeDuration, btnSpeed, btnExpand;
-  let speedIdx = 0; // SPEED_OPTIONS[0] = 1x
+  let speedIdx = 1; // SPEED_OPTIONS[1] = 1x（默认显示 1x）
   let sizeLevel = 1; // 0=sm 240px, 1=md 380px, 2=lg 560px
 
   // ==========================================================
@@ -215,7 +215,7 @@
             </div>
           </div>
         </div>
-        <button class="btn-speed" title="切换播放速度">0.75x</button>
+        <button class="btn-speed" title="切换播放速度">1x</button>
         <div class="actions-row">
           <button class="btn-expand" title="放大">⛶</button>
         </div>
