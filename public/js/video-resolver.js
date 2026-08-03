@@ -23,7 +23,7 @@
   // 配置
   // ==========================================================
   const MANIFEST_URL = "/data/manifest.json";
-  const SPEED_OPTIONS = [1, 1.25, 1.5, 1.75, 2];
+  const SPEED_OPTIONS = [0.75, 1, 1.25, 1.5, 1.75];
 
   // ==========================================================
   // 状态
@@ -215,7 +215,7 @@
             </div>
           </div>
         </div>
-        <button class="btn-speed" title="切换播放速度">1x</button>
+        <button class="btn-speed" title="切换播放速度">0.75x</button>
         <div class="actions-row">
           <button class="btn-expand" title="放大">⛶</button>
         </div>
